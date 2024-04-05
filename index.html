@@ -1,98 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="monetag" content="33970d4580c67d415a2c7bdf23847d57">
-
     <title>MegaflixBR</title>
+    <!-- Link Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Link css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
 </head>
 
 <body>
-    <!-- Inicio Cabeçalho do site -->
     <header>
         <div class="nav container">
-            <a href="index.php" class="logo" title="MegaflixBR">
+            <!-- Inicio Logo -->
+            <a href="index.html" class="logo">
                 Megaflix<span>BR</span>
             </a>
-            <div class="busca-site">
-                <input type="search" class="busca-input" placeholder="Buscar Filmes">
+            <!-- Fim Logo -->
+            <!-- Inicio Buscar -->
+            <div class="search-box">
+                <input type="search" id="search-input" placeholder="Buscar">
                 <i class="bx bx-search"></i>
             </div>
-            <a href="" class="user">
-                <img src="assets/img//p1.png" alt="Maykon Silveira" class="user-img">
+            <!-- Fim Buscar -->
+            <a href="#" class="user">
+                <img src="img/user.jpg" alt="" class="user-img">
             </a>
+            <!-- Inicio Navbar -->
             <div class="navbar">
-
-                <a href="#home" class="nav-link">
+                <a href="#home" class="nav-link nav-active">
                     <i class="bx bx-home"></i>
-                    <span class="nav-link-title">Home</span>
+                    <span class="nav-link-title">Inicio</span>
                 </a>
                 <a href="#popular" class="nav-link">
                     <i class="bx bxs-hot"></i>
-                    <span class="nav-link-title">Em alta</span>
+                    <span class="nav-link-title">Em Alta</span>
                 </a>
-                <a href="#filmes" class="nav-link">
+                <a href="#" class="nav-link">
                     <i class="bx bx-compass"></i>
-                    <span class="nav-link-title">Explore</span>
+                    <span class="nav-link-title">Explorar</span>
                 </a>
-                <a href="#filmes" class="nav-link">
+                <a href="play-page.html" class="nav-link">
                     <i class="bx bx-tv"></i>
                     <span class="nav-link-title">Filmes</span>
                 </a>
-                <a href="#home" class="nav-link">
+                <a href="#" class="nav-link">
                     <i class="bx bx-heart"></i>
                     <span class="nav-link-title">Favoritos</span>
                 </a>
-
             </div>
+            <!-- Fim Navbar -->
         </div>
     </header>
-    <!-- Fim Cabeçalho do site -->
-
     <!-- Inicio Banner Destaque -->
-
-    <section class="banner container">
-
-        <img src="assets/img/home-background.png" alt="" class="banner-img">
-        <div class="banner-texto">
-            <h1 class="banner-titulo">Super Mário 2 <br> o filme</h1>
-            <p>Lançamento em Setembro</p>
-            <a href="#" class="ver-btn">
+    <section class="home container" id="home">
+        <img src="img/home-background.png" alt="" class="home-img">
+        <div class="home-text">
+            <h1 class="home--title">O Guarda-Costas <br>e a Mulher do Assassino</h1>
+            <p>Lançamento 10 de Abril</p>
+            <a href="#" class="watch-btn">
                 <i class="bx bx-right-arrow"></i>
                 <span>Veja o Trailer</span>
             </a>
         </div>
-
     </section>
     <!-- Fim Banner Destaque -->
-
-    <!-- Inicio Topo Em Alta  -->
+    <!-- Inicio Em Alta Section  -->
     <section class="popular container" id="popular">
-        <div class="topFilmes">
-            <h2 class="topTitulo">Em Alta</h2>
+        <div class="heading">
+            <h2 class="heading-title">Em Alta</h2>
             <div class="swiper-btn">
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-
-        <!-- Fim Topo Em Alta  -->
-
-        <!-- Box slide em alta -->
         <div class="popular-content swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-1.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-1.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -100,11 +96,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-2.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Gênesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-2.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -112,11 +108,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-3.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-3.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -124,11 +120,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-4.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-4.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -136,11 +132,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-5.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-5.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -148,11 +144,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-6.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-6.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -160,11 +156,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-7.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-7.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -172,11 +168,11 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="filme-box">
-                        <img src="assets/img/filme-8.jpg" alt="" class="filme-box-img">
-                        <div class="box-titulo">
-                            <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                            <span class="categoria-filme">Gospel</span>
-                            <a href="ver-filme.php" class="ver-btn play-btn">
+                        <img src="img/popular-movie-8.jpg" alt="" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                            <span class="filme-class">Ação</span>
+                            <a href="#" class="watch-btn play-btn">
                                 <i class="bx bx-right-arrow"></i>
                             </a>
                         </div>
@@ -185,109 +181,122 @@
             </div>
         </div>
     </section>
-    <!-- Fim Box slide em alta -->
+    <!-- Fim Em Alta Section  -->
 
-    <!-- Inicio Filmes -->
-    <section class="filmes container" id="movies">
-        <div class="topFilmes">
-            <h2 class="topTitulo">Filmes e Shows</h2>
+    <!-- Inicio Filmes Section  -->
+    <section class="filmes container" id="filmes">
+        <div class="heading">
+            <h2 class="heading-title">Filmes</h2>
         </div>
+        <!-- Filmes Content -->
         <div class="filmes-content">
             <div class="filme-box">
-                <img src="assets/img/filme-8.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-1.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Jumanji: Bem vindo a selva</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="play-page.html" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-9.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-2.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-10.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-3.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-11.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-4.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-12.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-5.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-13.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-6.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-14.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-7.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
             <div class="filme-box">
-                <img src="assets/img/filme-15.jpg" alt="" class="filme-box-img">
-                <div class="box-titulo">
-                    <h2 class="titulo-filme">Genesis: o ínicio de tudo!</h2>
-                    <span class="categoria-filme">Gospel</span>
-                    <a href="ver-filme.php" class="ver-btn play-btn">
+                <img src="img/movie-8.jpg" alt="" class="filme-box-img">
+                <div class="box-text">
+                    <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
+                    <span class="filme-class">Ação</span>
+                    <a href="#" class="watch-btn play-btn">
                         <i class="bx bx-right-arrow"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Fim Filmes -->
-    <!-- Inicio Proxima pagina -->
-    <div class="proxima-pagina">
-        <a href="" class="proxima-btn">Próxima Página</a>
+    <!-- Fim Filmes Section  -->
+    <!-- Inicio Proxima Página -->
+    <div class="next-page">
+        <a href="#" class="next-btn">Proxima Página</a>
     </div>
-    <!-- Fim Proxima pagina -->
-    <!-- Inicio Rodapé -->
-    <footer class="direitos">
+    <!-- FimProxima Página -->
+    <!-- Copyright -->
+    <div class="copyright">
         <p>&#169; Todos os direitos reservados a Pablo Silva.</p>
-    </footer>
-    <!-- Fim Rodapé -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    </div>
+    <!-- FimCopyright -->
+
+
+
+
+
+
+
+    <!-- Link Js -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Link Api js -->
+    <script src="js/main.js" type="module"></script>
+    <script src="js/filmes.js" type="module"></script>
 </body>
 
 </html>
