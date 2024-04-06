@@ -696,7 +696,7 @@ header {
     }
     .search-box {
         max-width: 100%;
-        width: 100%;
+        width: auto;
         border-radius: 4px;
         order: 3;
         grid-column-start: 1;
