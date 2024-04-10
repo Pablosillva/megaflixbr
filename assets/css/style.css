@@ -65,7 +65,7 @@ body {
 }
 
 header {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
@@ -170,7 +170,6 @@ header {
     min-height: 470px;
     display: flex;
     align-items: center;
-    margin-top: 5rem !important;
     border-radius: 0.5rem;
 }
 
