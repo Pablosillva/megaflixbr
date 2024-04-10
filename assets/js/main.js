@@ -36,8 +36,9 @@ function showMovies(data) {
         <div class="box-text">
             <h2 class="filme-title">${title}</h2>
             <span class="filme-class">Ação</span>
-            <a href="play-page.html" class="watch-btn play-btn">
+            <a href="teste.html?filmeID=tt14539740" class="watch-btn">
                 <i class="bx bx-right-arrow"></i>
+                <span>Assistir</span>
             </a>
         </div>
             `;
@@ -79,4 +80,6 @@ form.addEventListener('submit', (e) => {
         getMovies(API_URL);
     }
 });
+
+
 
