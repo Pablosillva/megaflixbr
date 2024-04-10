@@ -36,7 +36,7 @@ function showMovies(data) {
         <div class="box-text">
             <h2 class="filme-title">${title}</h2>
             <span class="filme-class">Ação</span>
-            <a href="teste.html?filmeID=tt14539740" class="watch-btn">
+            <a href="play-page.html?filmeID=tt14539740" class="watch-btn">
                 <i class="bx bx-right-arrow"></i>
                 <span>Assistir</span>
             </a>
