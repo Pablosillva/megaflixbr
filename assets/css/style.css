@@ -76,8 +76,7 @@ header {
 .nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px 0;
+    justify-content: space-between;
 }
 
 .logo {
@@ -121,33 +120,13 @@ header {
     font-size: 0.938rem;
 }
 
-.user {
-    display: flex;
-}
-
-.user-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-}
-
 .navbar {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 18px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2.1rem;
+    margin-right: 200px;
 }
 
 .nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: #b7b7b7;
+    margin-left: 5px;
 }
 
 .nav-link:hover,
@@ -157,12 +136,22 @@ header {
     transform: scale(1.1);
 }
 
-.nav-link .bx {
+.nav-link {
     font-size: 1.4rem;
 }
 
 .nav-link-title {
     font-size: 0.7rem;
+}
+
+.fundo{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.596)), url(../img/banner-principal2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50vh;
 }
 
 .home {
@@ -181,22 +170,6 @@ header {
     object-fit: cover;
     border-radius: 0.5rem;
 }
-
-.home-text {
-    padding-left: 40px;
-}
-
-.home-title {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.home-text p {
-    font-size: 0.938rem;
-    margin: 10px 0 20px;
-    color: var(--cor-principal);
-}
-
 .watch-btn {
     display: flex;
     align-items: center;
@@ -568,6 +541,7 @@ header {
         justify-content: space-evenly;
         row-gap: 1px;
         padding: 10px;
+        margin: auto;
         border-top: 1px solid hsl(200, 100%, 99% / 5%);
         background: linear-gradient(8deg,
                 hsl(240 17% 14% / 100%) 5%,
@@ -597,8 +571,24 @@ header {
 }
 
 @media (max-width: 888px) {
-    .nav {
-        padding: 14px 0;
+    .navbar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        transform: translateY(0);
+        flex-direction: row;
+        justify-content: space-evenly;
+        row-gap: 1px;
+        padding: 10px;
+        margin: auto;
+        z-index: 999;
+        border-top: 1px solid hsl(200, 100%, 99% / 5%);
+        background: linear-gradient(8deg,
+                hsl(240 17% 14% / 100%) 5%,
+                hsl(240 17% 14% / 90%) 100%);
     }
 
     .home {
@@ -733,11 +723,6 @@ header {
     }
     .filmeBox {
         height: 285px;
-    }
-    .user-img,
-    .watch-btn .bx {
-        width: 35px;
-        height: 35px;
     }
     .navbar {
         justify-content: space-around;
