@@ -140,7 +140,7 @@ function getSuperFlixIdFromTMDB(tmdbId) {
 }
 
 function initializeSwiper() {
-    new initializeSwiper('.popular-content', {
+    new Swiper('.popular-content', {
         slidesPerView: 'auto',
         spaceBetween: 20,
         navigation: {
