@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,9 @@
     <!-- Box Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
 </head>
+
 <body>
-      <header>
+    <header>
         <div class="nav container">
             <a href="index.html" class="logo">
                 Megaflix<span>BR</span>
@@ -60,62 +62,8 @@
         <p>&#169; Todos os direitos reservados a MegaflixBR.</p>
     </div>
     <!-- FimCopyright -->
-
-    <!-- <script>
-        // Função para obter o parâmetro do ID do filme da URL
-        function SuperFlixAPIPluginJS() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('filmeID');
-        }
-
-        // Função para carregar o filme do SuperFlix com base no ID do filme da TMDB
-        function loadSuperFlixFilm(tmdbId) {
-            // Chamada para a API do SuperFlix para carregar o filme com o ID correspondente
-            // Aqui você precisa implementar a lógica para carregar o filme do SuperFlix com base no ID fornecido
-            // Esta é uma chamada de exemplo para a função SuperFlixAPIPluginJS
-            SuperFlixAPIPluginJS("filme", tmdbId, "", "");
-        }
-
-        // Carregar o filme do SuperFlix assim que a página for carregada
-        window.onload = function() {
-            const tmdbId = getFilmIdFromURL();
-            if (tmdbId) {
-                loadSuperFlixFilm(tmdbId);
-            } else {
-                console.error("ID do filme não encontrado na URL.");
-            }
-        };
-    </script> -->
-
-
-
-
-    <!-- <script>
-        async function getSuperFlixAPIFilm(event) {
-            event.preventDefault(); // Evita que o link seja seguido imediatamente
-            
-            const filmeLink = event.target.closest('.watch-btn').getAttribute('href'); // Obtém o link do filme clicado
-            const filmeID = filmeLink.split('=')[1]; // Extrai o ID do filme da URL
-            
-            try {
-                // Faz uma requisição à API do TMDB para obter as informações do filme
-                const tmdbResponse = await fetch(`${BASE_URL}/movie/${filmeID}?${API_KEY}`);
-                const tmdbData = await tmdbResponse.json();
-                
-                // Obtém o ID do filme na API do SuperFlixAPI a partir do TMDB ID
-                const superFlixAPIResponse = await fetch(`https://superflixapi.top/imdb/${tmdbData.id}`);
-                const superFlixAPIData = await superFlixAPIResponse.json();
-                const superFlixAPIFilmID = superFlixAPIData.tmdb_id;
-                
-                // Chama a função para adicionar o embed do filme ao site com o ID do filme do SuperFlixAPI
-                SuperFlixAPIPluginJS('filme', superFlixAPIFilmID, '', '');
-            } catch (error) {
-                console.error('Erro ao obter informações do filme:', error);
-            }
-        }
-        
-    </script> -->
-
+    
+    
     <script>
         var type = "filme"; // Tipo de conteúdo: "filme" ou "serie"
         var tmdb = getParameterByName('filmeID'); // ID do IMDB do filme
@@ -143,7 +91,7 @@
 
         // Função para adicionar o embed do filme ou série ao site
         function SuperFlixAPIPluginJS(type, tmdb, season, episode) {
-            if (type == "filme") {
+            if (type === "filme") {
                 season = "";
                 episode = "";
             } else {
@@ -158,12 +106,22 @@
             var frame = document.getElementById('SuperFlixAPIContainerVideo');
             frame.innerHTML += '<iframe src="https://superflixapi.top/' + type + '/' + tmdb + season + episode + '" width="100%" height="600px" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>';
         }
+        // Obtém o tipo de conteúdo da URL
+        var contentType = getParameterByName('contentType');
+
+        // Define o tipo de conteúdo com base no parâmetro da URL
+        if (contentType === "serie") {
+            type = "serie";
+        } else {
+            type = "filme";
+        }
+
 
         // Chamar a função para adicionar o embed do filme ou série ao site
         var superFlixId = getSuperFlixIdFromTMDB(tmdb);
         SuperFlixAPIPluginJS(type, superFlixId, season, episode);
-    </script>
-    <!-- Link Js -->
+    </script> -->
+    <!-- Link Js
     <script src="assets/js/main.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
