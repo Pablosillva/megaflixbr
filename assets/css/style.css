@@ -679,6 +679,7 @@ header {
     .filmeBox {
         position: relative;
         width: 100%;
+        height: auto;
     }
     .elenco-heading {
         font-size: 1.1rem;
@@ -710,7 +711,8 @@ header {
         margin-top: 7rem !important;
     }
     .filmeBox {
-        height: 300px;
+        width: 100%;
+        height: auto;
     }
     .filmes-content {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -721,9 +723,6 @@ header {
 @media (max-width:370px) {
     .home {
         min-height: 300px;
-    }
-    .filmeBox {
-        height: 285px;
     }
     .navbar {
         justify-content: space-around;
