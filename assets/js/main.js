@@ -1,41 +1,140 @@
 const API_KEY = 'api_key=a51b56a4039e79780a419fd16830b444&language=pt-BR';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const searchURL = BASE_URL + '/search/movie?' + API_KEY;
+const API_URL_FILMES = `${BASE_URL}/discover/movie?sort_by=popularity.desc&${API_KEY}`;
+const API_URL_SERIES = `${BASE_URL}/discover/tv?sort_by=popularity.desc&${API_KEY}`;
+ 
+// const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+// const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 
-const emAlta = document.getElementById('emAlta');
-const form = document.getElementById('form');
-const search = document.getElementById('search');
+// const emAlta = document.getElementById('emAlta');
+// const form = document.getElementById('form');
+// const search = document.getElementById('search');
 
-getMovies(API_URL)
-    .then(() => {
-        initializeSwiper();
-    });
+const emAltaContainer = document.getElementById('emAlta');
+const seriesContainer = document.getElementById('seriesContent');
 
-async function getMovies(url) {
+// function showMovies(data, container) {
+//     container.innerHTML = '';
+
+//     data.forEach(item => {
+//         const { id, title, poster_path, genre_ids } = item;
+//         const movieEl = document.createElement('div');
+//         movieEl.classList.add('swiper-slide', 'filmeBox');
+//         movieEl.innerHTML = `
+//             <img src="${IMG_URL + poster_path}" alt="${title}" class="filme-box-img">
+//             <div class="box-text">
+//                 <h2 class="filme-title">${title}</h2>
+//                 <span class="filme-class">${getGenres(genre_ids)}</span>
+//                 <a href="playpage.html?filmeID=${id}" class="watch-btn">
+//                     <i class="bx bx-right-arrow"></i>
+//                     <span>Assistir</span>
+//                 </a>
+//             </div>
+//         `;
+//         container.appendChild(movieEl);
+//     });
+// }
+
+function getGenres(genre_ids) {
+    const genres = {
+        28: 'Ação',
+        12: 'Aventura',
+        16: 'Animação',
+        35: 'Comédia',
+        80: 'Crime',
+        99: 'Documentário',
+        18: 'Drama',
+        10751: 'Família',
+        14: 'Fantasia',
+        36: 'História',
+        27: 'Terror',
+        10402: 'Música',
+        9648: 'Mistério',
+        10749: 'Romance',
+        878: 'Ficção Científica',
+        10770: 'Cinema TV',
+        53: 'Thriller',
+        10752: 'Guerra',
+        37: 'Faroeste'
+    };
+
+    return genre_ids.map(genre_id => genres[genre_id]).join(', ');
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const filmesResponse = await fetch(API_URL_FILMES);
+        const filmesData = await filmesResponse.json();
+        showMovies(filmesData.results.slice(0, 20), emAltaContainer);
+        //initializeSwiper();
+
+        const seriesResponse = await fetch(API_URL_SERIES);
+        const seriesData = await seriesResponse.json();
+        showMovies(seriesData.results.slice(0, 20), seriesContainer);
+        //initializeSwiper();
+    } catch (error) {
+        console.error('Erro ao obter filmes e séries:', error);
+    }
+});
+
+async function getMovies(url, type) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        showMovies(data.results.slice(0, 20));
+        showMovies(data.results.slice(0, 20), type);
     } catch (error) {
         console.error('Erro ao obter filmes:', error);
     }
 }
 
+function showMovies(data, container) {
+    if (!container) {
+        console.error('Elemento de contêiner não encontrado.');
+        return;
+    }
 
-function showMovies(data) {
-    emAlta.innerHTML = '';
+    container.innerHTML = '';
+
+    data.forEach(item => {
+        const { id, title, poster_path, genre_ids } = item;
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('swiper-slide', 'filmeBox');
+        movieEl.innerHTML = `
+            <img src="${IMG_URL + poster_path}" alt="${title}" class="filme-box-img">
+            <div class="box-text">
+                <h2 class="filme-title">${title}</h2>
+                <span class="filme-class">${getGenres(genre_ids)}</span>
+                <a href="playpage.html?filmeID=${id}" class="watch-btn">
+                    <i class="bx bx-right-arrow"></i>
+                    <span>Assistir</span>
+                </a>
+            </div>
+        `;
+        container.appendChild(movieEl);
+    });
+}
+
+getMovies(API_URL_FILMES)
+    .then(() => {
+        initializeSwiper();
+    });
+
+function showSeries(data, type) {
+    const container = type === 'filme' ? document.getElementById('emAlta') : document.getElementById('seriesContent');
+
+    container.innerHTML = '';
 
     data.forEach(filmeBox => {
-        const { id, title, poster_path } = filmeBox;
+        const { id, title, poster_path, genres } = filmeBox;
+        const genreNames = genres.map(genre => genre.name).join(', ');
         const movieEl = document.createElement('div');
         movieEl.classList.add('swiper-slide', 'filmeBox');
         movieEl.innerHTML = `
         <img src="${IMG_URL + poster_path}" alt="${title}" class="filme-box-img">
         <div class="box-text">
             <h2 class="filme-title">${title}</h2>
-            <span class="filme-class">Ação</span>
+            <span class="filme-class">${genreNames}</span>
             <a href="playpage.html?filmeID=${id}" class="watch-btn">
                 <i class="bx bx-right-arrow"></i>
                 <span>Assistir</span>
@@ -43,9 +142,15 @@ function showMovies(data) {
         </div>
             `;
 
-        emAlta.appendChild(movieEl);
+        container.appendChild(movieEl);
 
     });
+
+    // Aqui você precisa substituir a URL da API pelo endpoint que retorna as séries em alta
+    const seriesURL = `${BASE_URL}/discover/tv?sort_by=popularity.desc&${API_KEY}`;
+
+    // Obtenha as séries em alta e exiba-as
+    getMovies(seriesURL, seriesContainer);
 
     var type = "filme"; // Tipo de conteúdo: "filme" ou "serie"
     var tmdb = getParameterByName('filmeID'); // ID do IMDB do filme
@@ -73,7 +178,7 @@ function showMovies(data) {
 
     // Função para adicionar o embed do filme ou série ao site
     function SuperFlixAPIPluginJS(type, tmdb, season, episode) {
-        if (type == "filme") {
+        if (type === "filme") {
             season = "";
             episode = "";
         } else {
@@ -95,14 +200,14 @@ function showMovies(data) {
 
     function loadSuperFlixFilm(tmdbId) {
 
-        // Aqui você precisa mapear o ID do filme da TMDB para o correspondente na API do SuperFlix
-        // Pode ser necessário criar um mapeamento manual ou consultar uma API de terceiros para isso
+        const superFlixLink = `https://superflixapi.top/serie/${tmdbId}`;
+        openSeries(superFlixLink);
+        // const superFlixId = getSuperFlixIdFromTMDB(tmdbId);
+        // SuperFlixAPIPluginJS("filme", superFlixId, "", "");
+    }
 
-        // Suponha que você já tenha o mapeamento e o ID correspondente do filme no SuperFlix
-        const superFlixId = getSuperFlixIdFromTMDB(tmdbId);
-
-        // Chama a função SuperFlixAPIPluginJS com o tipo de filme "filme" e o ID do filme do SuperFlix
-        SuperFlixAPIPluginJS("filme", superFlixId, "", "");
+    function openSeries(superFlixLink) {
+        window.open(superFlixLink, '_blank');
     }
 
     // Adiciona evento de clique aos botões de assistir
@@ -115,10 +220,7 @@ function showMovies(data) {
             loadSuperFlixFilm(tmdbId);
         });
     });
-
 }
-
-
 
 // Função para mapear o ID do filme da TMDB para o correspondente no SuperFlix
 function getSuperFlixIdFromTMDB(tmdbId) {
@@ -140,12 +242,21 @@ function getSuperFlixIdFromTMDB(tmdbId) {
 }
 
 function initializeSwiper() {
-    new Swiper('.popular-content', {
+    const filmesSwiper = new Swiper('.popular-content-filmes', {
         slidesPerView: 'auto',
         spaceBetween: 20,
         navigation: {
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev-filmes',
+            nextEl: '.swiper-button-next-filmes',
+        },
+    });
+    
+    const seriesSwiper = new Swiper('.popular-content-series', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            prevEl: '.swiper-button-prev-series',
+            nextEl: '.swiper-button-next-series',
         },
     });
 }
@@ -160,17 +271,7 @@ function getColor(vote) {
     }
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const searchTerm = search.value;
-
-    if (searchTerm) {
-        getMovies(searchURL + '&query=' + searchTerm)
-    } else {
-        getMovies(API_URL);
-    }
-});
-
+getMovies(API_URL_FILMES, 'filme');
+getMovies(API_URL_SERIES, 'serie');
 
 
