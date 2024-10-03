@@ -88,7 +88,7 @@ header {
 }
 
 .logo span {
-    color: red;
+    color: var(--cor-principal);
 }
 
 .search {
