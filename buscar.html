@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaflixBR</title>
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/fav-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="index.html" class="logo">
+                Megaflix<span>BR</span>
+            </a>
+            <div class="navbar">
+                <a href="index.html" class="nav-link nav-active">
+                    <i class="bx bx-home"></i>
+                    <span class="nav-link-title">Inicio</span>
+                </a>
+                <a href="#popular" class="nav-link">
+                    <i class="bx bxs-hot"></i>
+                    <span class="nav-link-title">Em Alta</span>
+                </a>
+                <a href="playpage.html" class="nav-link">
+                    <i class="bx bx-tv"></i>
+                    <span class="nav-link-title">Filmes</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bx bx-compass"></i>
+                    <span class="nav-link-title">Explorar</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bx bx-heart"></i>
+                    <span class="nav-link-title">Favoritos</span>
+                </a>
+            </div>
+            <div class="search">
+                <input type="search" id="search" placeholder="Buscar">
+                <a id="icon-search" href="buscar.html"><i class="bx bx-search"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="fundo " id="home">
+        </section>
+        
+        <section class="buscar container" id="buscar">
+            <div class="heading">
+                <h2 class="heading-title">Resultado da Busca</h2>
+                <div class="swiper-btn">
+                    <div class="swiper-button-prev swiper-button-prev-buscar"></div>
+                    <div class="swiper-button-next swiper-button-next-buscar"></div>
+                </div>
+            </div>
+            <div class="filmeBox"></div>
+            
+            <!-- <div class="resultado">
+                <div class="filmeBoxCard">
+
+                    <div class="filmeBox">
+                        <img src="https://image.tmdb.org/t/p/w500/53YWSo75mSaw1vd2YEeX5kwkRos.jpg"
+                            alt="Deadpool &amp; Wolverine" class="filme-box-img">
+                        <div class="box-text">
+                            <h2 class="filme-title">Deadpool &amp; Wolverine</h2>
+                            <span class="filme-class">Ação, Comédia, Ficção Científica</span>
+                            <a href="playpage.html?filmeID=533535" class="watch-btn">
+                                <i class="bx bx-right-arrow"></i>
+                                <span>Assistir</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="popular-content-filmes swiper-container swiper-container-filmes">
+                <div id="buscarContent" class="swiper-wrapper"></div>
+            </div>
+
+        </section>
+
+        <div class="next-page">
+            <a href="test.html" class="next-btn">Proxima Página</a>
+        </div>
+    </main>
+    <!-- Copyright -->
+    <footer>
+
+        <div class="copyright">
+            <p>&#169; Todos os direitos reservados a MegaflixBR.</p>
+        </div>
+    </footer>
+    <!-- FimCopyright -->
+
+
+    <!-- Link Js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- Link Api js -->
+    <script src="assets/js/main.js" type="module"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/buscar.js"></script>
+    <script src="assets/js/filmes.js" type="module"></script>
+</body>
+
+</html>
