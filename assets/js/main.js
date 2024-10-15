@@ -3,38 +3,17 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const API_URL_FILMES = `${BASE_URL}/discover/movie?sort_by=popularity.desc&${API_KEY}`;
 const API_URL_SERIES = `${BASE_URL}/discover/tv?sort_by=popularity.desc&${API_KEY}`;
- 
-// const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
-// const searchURL = BASE_URL + '/search/movie?' + API_KEY;
-
-// const emAlta = document.getElementById('emAlta');
-// const form = document.getElementById('form');
-// const search = document.getElementById('search');
 
 const emAltaContainer = document.getElementById('emAlta');
 const seriesContainer = document.getElementById('seriesContent');
 
-// function showMovies(data, container) {
-//     container.innerHTML = '';
-
-//     data.forEach(item => {
-//         const { id, title, poster_path, genre_ids } = item;
-//         const movieEl = document.createElement('div');
-//         movieEl.classList.add('swiper-slide', 'filmeBox');
-//         movieEl.innerHTML = `
-//             <img src="${IMG_URL + poster_path}" alt="${title}" class="filme-box-img">
-//             <div class="box-text">
-//                 <h2 class="filme-title">${title}</h2>
-//                 <span class="filme-class">${getGenres(genre_ids)}</span>
-//                 <a href="playpage.html?filmeID=${id}" class="watch-btn">
-//                     <i class="bx bx-right-arrow"></i>
-//                     <span>Assistir</span>
-//                 </a>
-//             </div>
-//         `;
-//         container.appendChild(movieEl);
-//     });
-// }
+searchButton.addEventListener('click', (event) => {
+    event.preventDefault();  // Impede o comportamento padrão do link
+    const searchQuery = searchInput.value.trim();
+    if (searchQuery) {
+        window.location.href = `buscar.html?query=${encodeURIComponent(searchQuery)}`;
+    }
+});
 
 function getGenres(genre_ids) {
     const genres = {
@@ -62,6 +41,7 @@ function getGenres(genre_ids) {
     return genre_ids.map(genre_id => genres[genre_id]).join(', ');
 }
 
+
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const filmesResponse = await fetch(API_URL_FILMES);
@@ -73,6 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const seriesData = await seriesResponse.json();
         showMovies(seriesData.results.slice(0, 20), seriesContainer);
         //initializeSwiper();
+        
     } catch (error) {
         console.error('Erro ao obter filmes e séries:', error);
     }
@@ -202,8 +183,6 @@ function showSeries(data, type) {
 
         const superFlixLink = `https://superflixapi.top/serie/${tmdbId}`;
         openSeries(superFlixLink);
-        // const superFlixId = getSuperFlixIdFromTMDB(tmdbId);
-        // SuperFlixAPIPluginJS("filme", superFlixId, "", "");
     }
 
     function openSeries(superFlixLink) {
@@ -259,6 +238,15 @@ function initializeSwiper() {
             nextEl: '.swiper-button-next-series',
         },
     });
+
+    const buscarSwiper = new Swiper('.popular-content-buscar', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            prevEl: '.swiper-button-prev-buscar',
+            nextEl: '.swiper-button-next-buscar',
+        },
+    });
 }
 
 function getColor(vote) {
@@ -273,5 +261,3 @@ function getColor(vote) {
 
 getMovies(API_URL_FILMES, 'filme');
 getMovies(API_URL_SERIES, 'serie');
-
-
