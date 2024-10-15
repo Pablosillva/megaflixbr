@@ -36,6 +36,10 @@ html::-webkit-scrollbar-thumb {
 a {
     text-decoration: none;
 }
+#icon-search {
+    color:#b7b7b7;
+    margin-bottom: -5px;
+}
 
 li {
     list-style: none;
@@ -229,9 +233,9 @@ header {
 }
 
 .filmeBox{
-    /*width: 100%;*/
-    padding: 10px;
-    height: 380px;
+    width: 230px;
+    /* padding: 10px; */
+    /* height: 380px; */
     overflow: hidden;
 }
 
@@ -244,7 +248,7 @@ header {
 
 .box-text {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
     width: 100%;
     padding: 14px;
