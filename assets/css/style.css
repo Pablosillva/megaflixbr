@@ -124,6 +124,7 @@ header {
     font-size: 0.938rem;
 }
 
+
 .navbar {
     margin-right: 200px;
 }
@@ -236,7 +237,7 @@ header {
     width: 230px;
     /* padding: 10px; */
     /* height: 380px; */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .filme-box-img {
