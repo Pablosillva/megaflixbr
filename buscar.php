@@ -13,9 +13,7 @@
 </head>
 
 <body>
-    <script language="php">
     <?php include('popcash.php'); ?>
-    </script>
     <header>
         <div class="nav container">
             <a href="index.html" class="logo">
